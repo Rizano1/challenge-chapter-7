@@ -11,6 +11,7 @@ router.get('/protected', passport.authenticate('jwt', { session: false }), apiCo
 router.post('/room', jsonParser, passport.authenticate('jwt', { session: false }), customMiddleware.validateSuperadmin , apiController.room)
 router.get('/room', apiController.getRoom)
 router.post('/chooseRoom', jsonParser, passport.authenticate('jwt', { session: false }), apiController.chooseRoom)
+router.put('/chooseHand', jsonParser, passport.authenticate('jwt', { session: false }), apiController.chooseHand)
 
 module.exports = router
 
